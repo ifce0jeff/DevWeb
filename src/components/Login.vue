@@ -4,13 +4,16 @@
         <input type="text" name="username" v-model="input.username" placeholder="Username" />
         <input type="password" name="password" v-model="input.password" placeholder="Password" />
         <button type="button" v-on:click="login()">Login</button>
-        <b-container class="bv-example-row">
-            <b-row>
-                <b-col>1 of 3</b-col>
-                <b-col>2 of 3</b-col>
-                <b-col>3 of 3</b-col>
-            </b-row>
-        </b-container>
+        <router-link to="Home">
+        </router-link>
+        <router-link to="CadastroUsuario">
+        <button type="button" >Cadastrar Usuario</button>
+
+        </router-link>
+        <router-link to="RecuperarSenha">
+        <button type="button" >Recuperar Senha</button>
+
+        </router-link>
     </div>
 </template>
 
