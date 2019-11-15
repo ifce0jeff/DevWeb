@@ -16,6 +16,8 @@
   </ul>
 </nav>
 
+    <p class="titulo">Reservar seu restaurante e fazer seu pedido nunca foi tão facil</p>
+    <p>Descubra restaurantes perto de você</p>
     <form id="form">
         <h1>Login</h1>
         <input class="input" type="text" name="username" v-model="input.username" placeholder="Username" />
@@ -25,12 +27,7 @@
         </router-link>
         <button class="button" type="button" v-b-modal.usuario>Cadastro</button><br>
         <button class="a" type="button" v-b-modal.esqueceu>Esqueceu sua senha?</button>
-        <!-- <router-link to="RecuperarSenha">
-        <a>Esqueceu sua senha?</a>
-
-        </router-link> -->
     </form>
-
 </div>
 <div>
   <b-modal id="esqueceu" centered title="Esqueci Minha Senha" button-size="sm">
@@ -100,6 +97,23 @@
     background-color: black;
     color: blue;
     border-width: 0;
+}
+p {
+  position: absolute;
+  top: 60%;
+  left: 52%;
+  font-size: 150%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.titulo {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  font-size: 250%;
+  font-weight: bold;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #form {
