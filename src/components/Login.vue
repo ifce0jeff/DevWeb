@@ -18,21 +18,51 @@
 
     <form id="form">
         <h1>Login</h1>
-        <input type="text" name="username" v-model="input.username" placeholder="Nome Usuário" />
-        <input type="password" name="password" v-model="input.password" placeholder="Senha" />
+        <input class="input" type="text" name="username" v-model="input.username" placeholder="Username" />
+        <input class="input" type="password" name="password" v-model="input.password" placeholder="Password" />
         <router-link to="Home">
-        <button id="log" type="button"> Login </button>
+        <button class="button" id="log" type="button"> Login </button>
         </router-link>
-        <router-link to="CadastroUsuario">
-        <button type="button" >Cadastro</button>
-
-        </router-link>
-        <router-link to="RecuperarSenha">
+        <button class="button" type="button" v-b-modal.usuario>Cadastro</button><br>
+        <button class="a" type="button" v-b-modal.esqueceu>Esqueceu sua senha?</button>
+        <!-- <router-link to="RecuperarSenha">
         <a>Esqueceu sua senha?</a>
 
-        </router-link>
+        </router-link> -->
     </form>
 
+</div>
+<div>
+  <b-modal id="esqueceu" centered title="Esqueci Minha Senha" button-size="sm">
+    <form ref="form">
+        <p>Informe seu e-mail, e enviaremos sua senha !!!</p>
+        <b-form-group label="Email" label-for="email-input" invalid-feedback="Email is required">
+          <b-form-input id="email-input" v-model="email" required></b-form-input>
+        </b-form-group>
+      </form>
+  </b-modal>
+</div>
+
+<div>
+  <b-modal id="usuario" centered title="Cadastro Usuário" button-size="sm">
+    <form ref="form">
+        <b-form-group label="Nome" label-for="name-input" invalid-feedback="Name is required">
+          <b-form-input id="name-input" v-model="name" required></b-form-input>
+        </b-form-group>
+        <b-form-group label="Email" label-for="email-input" invalid-feedback="Email is required">
+          <b-form-input id="email-input" v-model="email" required></b-form-input>
+        </b-form-group>
+        <b-form-group label="Telefone" label-for="telefone-input">
+          <b-form-input id="telefone-input" v-model="telefone"></b-form-input>
+        </b-form-group>
+        <b-form-group label="Cidade" label-for="cidade-input">
+          <b-form-input id="cidade-input" v-model="cidade"></b-form-input>
+        </b-form-group>
+        <b-form-group label="Estado" label-for="estado-input">
+          <b-form-input id="estado-input" v-model="estado"></b-form-input>
+        </b-form-group>
+      </form>
+  </b-modal>
 </div>
 </body>
 </template>
@@ -66,7 +96,13 @@
 </script>
 
 <style scoped>
-   form {
+.a {
+    background-color: black;
+    color: blue;
+    border-width: 0;
+}
+
+#form {
     width: 350px;
 	padding: 40px;
 	position: absolute;
@@ -80,7 +116,7 @@
     color: white
     }
 
-    button {
+.button {
     border: 0;
 	background: none;
 	display: block;
@@ -97,8 +133,8 @@
     display:inline-block;
     }
 
-    input {
-        border: 0;
+.input {
+    border: 0;
 	background: white;
 	display: block;
 	margin: 20px auto;
@@ -113,19 +149,19 @@
 	border-radius: 10px;
     }
 
-    h3 {
-        color: aliceblue
-    }
+h3 {
+    color: aliceblue
+}
 
-    .fundo {
+.fundo {
     background-position: center right;
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
     overflow:hidden;
-    }
+}
 
-    .linha-vertical {
+.linha-vertical {
     top: 17%;
     right: 66%;
     position: absolute;
