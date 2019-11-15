@@ -1,7 +1,7 @@
 <template>
 <body>
       <div class="linha-vertical"></div>
-    <img src="./comida.jpg" class="img-responsive" alt="Cinque Terre" width="1366" height="635">
+    <img src="./comida.jpg" class="img-responsive" alt="Cinque Terre" width="1366" height="695">
 <div>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
 
