@@ -18,10 +18,10 @@
 
     <form id="form">
         <h1>Login</h1>
-        <input type="text" name="username" v-model="input.username" placeholder="Username" />
-        <input type="password" name="password" v-model="input.password" placeholder="Password" />
-        <button id="log" type="button" v-on:click="login()"> Login </button>
+        <input type="text" name="username" v-model="input.username" placeholder="Nome Usuário" />
+        <input type="password" name="password" v-model="input.password" placeholder="Senha" />
         <router-link to="Home">
+        <button id="log" type="button"> Login </button>
         </router-link>
         <router-link to="CadastroUsuario">
         <button type="button" >Cadastro</button>
