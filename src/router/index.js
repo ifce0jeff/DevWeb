@@ -1,10 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Login from '@/components/Login'
-import Perfil from '@/components/Perfil'
-import Home from '@/components/Home'
-
-Vue.use(Router)
+import Router from 'vue-router';
+import Login from '@/views/Login';
+import Perfil from '@/views/Perfil';
+import Home from '@/views/Home';
+import Restaurantes from '@/views/Restaurantes';
 
 export default new Router({
   routes: [
@@ -22,6 +20,11 @@ export default new Router({
       path: '/Home',
       name: 'Home',
       component: Home
-    }
+    },
+    {
+      path: '/Restaurantes',
+      name: 'Restaurantes',
+      component: Restaurantes
+    },
   ]
-})
+});
