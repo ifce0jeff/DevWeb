@@ -2,27 +2,21 @@
 <body>
   <div class="linha-vertical"></div>
   <img
-    src="../assets/comida.jpg"
+    src="../assets/fundologin.jpg"
     class="img-responsive"
     alt="Cinque Terre"
     width="1366"
     height="695"
   />
   <div>
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
-      <a class="navbar-brand" href="#">
-        <img src="../assets/logo.png" alt="logo" style="width:40px;" />
-      </a>
+    
+    <img
+    src="../assets/logologin.png"
+    class="logo"
+  />
 
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <h3>Baratiê</h3>
-        </li>
-      </ul>
-    </nav>
-
-    <p class="titulo">Reservar seu restaurante e fazer seu pedido nunca foi tão facil</p>
-    <p>Descubra restaurantes perto de você</p>
+    <p class="titulo">Baratiê</p>
+    <p class="subtitulo">Descubra restaurantes perto de você!</p>
     <form id="form">
       <h1>Login</h1>
       <input
@@ -114,25 +108,36 @@ export default {
 </script>
 
 <style scoped>
+.logo {
+  position: absolute;
+  top: 26%;
+  width: 285px;
+  left: 38%;
+}
+
 .a {
-  background-color: black;
-  color: blue;
+  background-color: rgb(0, 6, 24);
+  color: rgb(0, 195, 255);
   border-width: 0;
 }
-p {
+
+.titulo {
+  color: white;
   position: absolute;
-  top: 60%;
-  left: 52%;
-  font-size: 150%;
+  top: 42%;
+  left: 65%;
+  font-size: 400%;
+  font-weight: bold;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.titulo {
+
+.subtitulo {
+  color: aqua;
   position: absolute;
-  top: 30%;
-  left: 40%;
-  font-size: 250%;
-  font-weight: bold;
+  top: 54%;
+  left: 59%;
+  font-size: 150%;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -141,13 +146,13 @@ p {
   width: 350px;
   padding: 40px;
   position: absolute;
-  top: 54%;
-  right: 58%;
+  top: 52%;
+  right: 55%;
   transform: translate(-50%, -50%);
-  background: black;
+  background: rgb(0, 6, 24);
   text-align: center;
   border-radius: 10px;
-  opacity: 0.9;
+  opacity: 0.8;
   color: white;
 }
 
@@ -158,7 +163,7 @@ p {
   margin: 10px auto;
   text-align: center;
   color: white;
-  border: 1.5px solid blue;
+  border: 1.5px solid rgb(0, 195, 255);
   padding: 9px 30px;
   outline: none;
   transition: 0.39s;
@@ -175,7 +180,7 @@ p {
   margin: 20px auto;
   text-align: center;
   color: black;
-  border: 1.5px solid blue;
+  border: 1.5px solid rgb(0, 195, 255);
   padding: 14px 10px;
   width: 200px;
   outline: none;
@@ -184,24 +189,20 @@ p {
   border-radius: 10px;
 }
 
-h3 {
-  color: aliceblue;
-}
-
 .fundo {
-  background-position: center right;
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  background-size: cover;
+  background-size: auto;
   overflow: hidden;
 }
 
 .linha-vertical {
-  top: 17%;
-  right: 66%;
+  top: 10%;
+  right: 62%;
   position: absolute;
-  color: black;
-  height: 530px; /*Altura da linha*/
+  color: rgb(255, 255, 255);
+  height: 570px; /*Altura da linha*/
   border-left: 3px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
 }
 </style>
