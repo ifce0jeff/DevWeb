@@ -3,7 +3,7 @@
   <div>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
       <a class="navbar-brand" href="#">
-        <img src="../assets/logo.png" alt="logo" style="width:40px;" />
+        <img src="../assets/logologin.png" alt="logo" style="width:48px;" />
       </a>
 
       <ul class="navbar-nav">

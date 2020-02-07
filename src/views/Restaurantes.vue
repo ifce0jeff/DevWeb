@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
       <a class="navbar-brand" href="#">
-        <img src="../assets/logo.png" alt="logo" style="width:40px;" />
+        <img src="../assets/logologin.png" alt="logo" style="width:48px;" />
       </a>
 
       <ul class="navbar-nav">
@@ -181,5 +181,13 @@ table td {
   font-weight: bold;
   font-style: italic;
   color: rgb(0, 180, 0);
+}
+
+h3 {
+  color: aliceblue;
+}
+
+li {
+  margin-right: 40px;
 }
 </style>

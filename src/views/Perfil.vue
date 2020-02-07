@@ -3,7 +3,7 @@
   <div>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
       <a class="navbar-brand" href="#">
-        <img src="../assets/logo.png" alt="logo" style="width:40px;" />
+        <img src="../assets/logologin.png" alt="logo" style="width:48px;" />
       </a>
 
       <ul class="navbar-nav">
@@ -42,8 +42,9 @@
   <br>
   <br>
   <div class="header">
-
+    <img class="fundoavatar" src="https://cdn.pixabay.com/photo/2015/09/17/10/31/banner-943868_960_720.jpg">
     <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAq-kDuBVISjGySzX1pIu93Btb8tRboFFTeyQyBQhVS1bt9h6kw&s" />
+    <div class="teste">
     <h1 class="userName">Nome do usuário</h1>
 
     <ul class="lista">
@@ -71,6 +72,7 @@ Reunião das qualidades pessoais ou profissionais que torna alguém apto para um
 [Arquitetura] Desenho de um corte perpendicular de cima a baixo de um edifício.
 [Militar] Ação de perfilar, de dispor em fila.</p>
     </div>
+    </div>
 
   </div>
 
@@ -82,6 +84,11 @@ Reunião das qualidades pessoais ou profissionais que torna alguém apto para um
 </script>
 
 <style scoped>
+
+.teste {
+  position: relative;
+  top: 85%;
+}
 
 .icone {
   width: 16px;
@@ -138,18 +145,28 @@ a:hover {
   text-align: center;
   height: 250px;
   padding: 12px;
-  background-image: url("http://curiosando.com.br/wp-content/uploads/2012/04/blue-spec-madness.jpg");
+  
 }
 
 .avatar {
+  position: absolute;
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  left: 585px;
 
 }
 
+.fundoavatar {
+  top: 79px;
+  right: 0px;
+  height: 235px;
+  width: 100%;
+  position: absolute;
+}
+
 .userName {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 14px;
   color: white;
 }
