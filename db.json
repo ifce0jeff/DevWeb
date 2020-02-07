@@ -1,0 +1,67 @@
+{
+  "reservas": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "restaurantes": [
+    {
+      "id": 1,
+      "nome": "McDonald",
+      "endereco": "McDonald",
+      "preco": 1,
+      "categoria": 2,
+      "especialidade": "Laches",
+      "status": "Aberto"
+    },
+    {
+      "id": 2,
+      "nome": "LaParrilla",
+      "endereco": "LaParrilla",
+      "preco": 2,
+      "categoria": 3,
+      "especialidade": "Hamburguer",
+      "status": "Fechado"
+    },
+    {
+      "id": 3,
+      "nome": "Point Certo",
+      "endereco": "Point Certo",
+      "preco": 3,
+      "categoria": 3,
+      "especialidade": "Pizza",
+      "status": "Fechado"
+    },
+    {
+      "id": 4,
+      "nome": "Jião Huò",
+      "endereco": "Jião Huò",
+      "preco": 3,
+      "categoria": 4,
+      "especialidade": "Chinesa",
+      "status": "Aberto"
+    },
+    {
+      "id": 5,
+      "nome": "Trip Burger",
+      "endereco": "Trip Burger",
+      "preco": 3,
+      "categoria": 4,
+      "especialidade": "Hamburguer",
+      "status": "Aberto"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Iesus",
+      "email": "iesus90@gmail.com",
+      "senha": "1234",
+      "facebook": "Iesus Silva",
+      "twitter": "iesusreal",
+      "sobre": "Conjunto dos traços do rosto de uma pessoa visto de lado. Representação de um objeto visto de lado; aspecto. Descrição em traços rápidos de alguém; retrato moral de uma pessoa. [Popular] Conjunto das informações pessoais que identificam o usuário (nome, idade, profissão, cidade de nascimento etc.) disponíveis em redes sociais, sites, blogues. Reunião das qualidades pessoais ou profissionais que torna alguém apto para um trabalho, cargo, atividade: seu perfil não se encaixa nesta empresa. [Arquitetura] Desenho de um corte perpendicular de cima a baixo de um edifício. [Militar] Ação de perfilar, de dispor em fila."
+    }
+  ]
+}

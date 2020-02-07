@@ -16,9 +16,6 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reserva</a>
-        </li>
-        <li class="nav-item">
           <router-link to="/Restaurantes">
             <span class="nav-link">Restaurantes</span>
           </router-link>

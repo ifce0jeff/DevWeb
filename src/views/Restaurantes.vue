@@ -1,4 +1,5 @@
 <template>
+<body>
   <div>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
       <a class="navbar-brand" href="#">
@@ -13,9 +14,6 @@
           <router-link to="/Home">
             <span class="nav-link">Inicio</span>
           </router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Reserva</a>
         </li>
         <li class="nav-item">
           <router-link to="/Restaurantes">
@@ -44,26 +42,41 @@
             <th v-for="(i, id) in headerItens" :key="id">{{ i.header }}</th>
           </tr>
         </thead>
-        <tbody v-model="items">
-          <tr v-for="(e, id) in items" :key="id">
-            <td>{{ e.Nome }}</td>
-            <td>{{ e.Endereço }}</td>
+        <tbody v-model="restaurantes">
+          <tr v-for="(e, id) in restaurantes" :key="id">
+            <td>{{ e.nome }}</td>
+            <td>{{ e.endereco }}</td>
             <td class="money">
-              <div style="display: inline" v-for="(i, id) in e.Preço" :key="id">$</div>
+              <div style="display: inline" v-for="(i, id) in e.preco" :key="id">$</div>
             </td>
             <td>
-              <v-icon v-for="(i, id) in e.Categoria" :key="id" class="star" name="star"></v-icon>
+              <v-icon v-for="(i, id) in e.categoria" :key="id" class="star" name="star"></v-icon>
             </td>
-            <td>{{ e.Especialidade }}</td>
-            <td>{{ e.Status }}</td>
+            <td>{{ e.especialidade }}</td>
+            <td>{{ e.status }}</td>
+            <td style="width: 5%"><button class="botao-res" v-b-modal.reserva>Reservar</button></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <div>
+    <b-modal id="reserva" centered title="Reserva" button-size="sm">
+      <form ref="form">
+        <b-form-group label="Restaurante" label-for="restaurante-input">
+          <b-form-input id="restaurante-input" v-model="reserva.restaurante"></b-form-input>
+        </b-form-group>
+        <b-form-group label="Horário" label-for="hora-input">
+          <b-form-input id="hora-input" v-model="reserva.hora"></b-form-input>
+        </b-form-group>
+      </form>
+    </b-modal>
+  </div>
+</body>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -76,72 +89,19 @@ export default {
         { header: "Especialidade" },
         { header: "" }
       ],
-      items: [
-        {
-          Logo: "../assets/Restaurantes/mcdonalds.png",
-          Nome: "McDonald",
-          Endereço: "Macdonald",
-          Preço: 1,
-          Categoria: 2,
-          Especialidade: "Laches",
-          Status: "Aberto"
-        },
-        {
-          Logo: "../assets/Restaurantes/laparrilla.png",
-          Nome: "Laparrilla",
-          Endereço: "Shaw",
-          Preço: 2,
-          Categoria: 1,
-          Especialidade: "Hamburguer",
-          Status: "Fechado"
-        },
-        {
-          Logo: "../assets/Restaurantes/point.png",
-          Nome: "Point Certo",
-          Endereço: "Wilson",
-          Preço: 3,
-          Categoria: 3,
-          Especialidade: "Pizza",
-          Status: "Fechado"
-        },
-        {
-          Logo: "../assets/Restaurantes/bobs.jpg",
-          Nome: "Bob's",
-          Endereço: "Carney",
-          Preço: 4,
-          Categoria: 4,
-          Especialidade: "Lanches",
-          Status: "Aberto"
-        },
-        {
-          Logo: "../assets/Restaurantes/mcdonalds.png",
-          Nome: "Pizzaria Napolitana",
-          Endereço: "Rua Dragão do Mar",
-          Preço: 1,
-          Categoria: 3,
-          Especialidade: "Pizza",
-          Status: "Aberto"
-        },
-        {
-          Logo: "../assets/Restaurantes/mcdonalds.png",
-          Nome: "Jião Huò",
-          Endereço: "Rua Carvalho",
-          Preço: 3,
-          Categoria: 4,
-          Especialidade: "Chinesa",
-          Status: "Aberto"
-        },
-        {
-          Logo: "../assets/Restaurantes/mcdonalds.png",
-          Nome: "Trip Burger",
-          Endereço: "Rua Barão",
-          Preço: 3,
-          Categoria: 4,
-          Especialidade: "Laches",
-          Status: "Aberto"
-        }
-      ]
+      restaurantes: [],
+      reserva: {}
     };
+  },
+  created() {
+    axios.get('http://localhost:3000/restaurantes')
+    .then(response => {
+      this.restaurantes = response.data
+      console.log(this.restaurantes);
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 };
 </script>
@@ -181,6 +141,17 @@ table td {
   font-weight: bold;
   font-style: italic;
   color: rgb(0, 180, 0);
+}
+
+.botao-res {
+  border: 0;
+  background: rgb(30,144,255);
+  margin: 10px auto;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 h3 {

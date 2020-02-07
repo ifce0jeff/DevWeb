@@ -16,9 +16,6 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reserva</a>
-        </li>
-        <li class="nav-item">
           <router-link to="/Restaurantes">
             <span class="nav-link">Restaurantes</span>
           </router-link>
@@ -45,32 +42,26 @@
     <img class="fundoavatar" src="https://cdn.pixabay.com/photo/2015/09/17/10/31/banner-943868_960_720.jpg">
     <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAq-kDuBVISjGySzX1pIu93Btb8tRboFFTeyQyBQhVS1bt9h6kw&s" />
     <div class="teste">
-    <h1 class="userName">Nome do usuário</h1>
+    <h1 class="userName">{{ usuario.nome }}</h1>
 
     <ul class="lista">
       <li>
         <i class="icone email"></i>
-        <a href="mailto:teste@gmail.com">teste@gmail.com</a>
+        <a href="mailto:teste@gmail.com">{{ usuario.email }}</a>
       </li>
       <li>
          <i class="icone facebook"></i>
-        <a href="http://facebook.com/teste">teste</a>
+        <a href="http://facebook.com/teste">{{ usuario.facebook }}</a>
       </li>
-      <li>
+      <li v-if="usuario.twitter != null">
          <i class="icone twitter"></i>
-        <a href="http://twitter.com/teste">@teste</a>
+        <a href="http://twitter.com/teste">{{ usuario.twitter }}</a>
       </li>
     </ul>
 
     <div class="sobre">
       <h2>Sobre</h2>
-      <p>Conjunto dos traços do rosto de uma pessoa visto de lado.
-Representação de um objeto visto de lado; aspecto.
-Descrição em traços rápidos de alguém; retrato moral de uma pessoa.
-[Popular] Conjunto das informações pessoais que identificam o usuário (nome, idade, profissão, cidade de nascimento etc.) disponíveis em redes sociais, sites, blogues.
-Reunião das qualidades pessoais ou profissionais que torna alguém apto para um trabalho, cargo, atividade: seu perfil não se encaixa nesta empresa.
-[Arquitetura] Desenho de um corte perpendicular de cima a baixo de um edifício.
-[Militar] Ação de perfilar, de dispor em fila.</p>
+      <p>{{ usuario.sobre }}</p>
     </div>
     </div>
 
@@ -81,6 +72,25 @@ Reunião das qualidades pessoais ou profissionais que torna alguém apto para um
 </template>
 
 <script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      usuario: {},
+    }
+  },
+  created() {
+    axios.get('http://localhost:3000/usuarios')
+    .then(response => {
+      this.usuario = response.data[0]
+      console.log(this.usuario);
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  }
+}
 </script>
 
 <style scoped>
@@ -145,7 +155,6 @@ a:hover {
   text-align: center;
   height: 250px;
   padding: 12px;
-  
 }
 
 .avatar {
@@ -164,7 +173,6 @@ a:hover {
   width: 100%;
   position: absolute;
 }
-
 .userName {
   font-size: 20px;
   margin-top: 14px;
