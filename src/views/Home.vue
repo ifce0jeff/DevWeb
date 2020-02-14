@@ -36,28 +36,21 @@
       </ul>
     </nav>
 
-    <figure id="container">
-      <img src="../assets/tela1.jpg" class="imgpos" />
-      <figcaption>Nossa Praticidade Para Sua Satisfação</figcaption>
-    </figure>
+    <div id="sld"></div>
 
     <div>
       <h1 class="primeiro">Bem Vindo ao</h1>
       <h1 class="segundo">Baratiê</h1>
-      <hr class="b-hori" />
+      <hr class="b-hori">
       <p class="parag">
         Somos um novo nome, mais restaurantes, melhores benefícios
         e o mesmo amor pela comida! O Baratiê vai te ajudar na hora de fazer aquela
         reserva no restaurante que você tanto gosta. Sem burocracia,
-        rapido, pratico e eficiente! Tudo para que você desfrute do melhor. Além disso,
-        ainda disponibilizamos a opção de o prato ser pedido antes mesmo de você chegar ao local.
-        Por menos enrolação e mais apetite!
+        rapido, pratico e eficiente! Tudo para que você desfrute do melhor.
       </p>
     </div>
     <button class="botao-res" id="log" type="button">Faça Sua Reserva</button>
-    <div>
-      <img src="../assets/homenjpg.jpg" class="img-homem" />
-    </div>
+    
   </div>
 </body>
 </template>
@@ -66,6 +59,44 @@
 </script>
 
 <style scoped>
+#sld {
+filter: brightness(38%);
+position: relative;
+width: 100%;
+height: 100vh;
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
+backface-visibility: hidden;
+animation: sld 15s linear infinite 0s;
+animation-timing-function: ease-in-out;
+background-image: url(../assets/1.jpg);
+}
+
+@keyframes sld {
+
+  0% {
+    background-image: url(../assets/2.jpg)
+  }
+
+  25% {
+    background-image: url(../assets/3.jpg)
+  }
+
+  50% {
+    background-image: url(../assets/4.jpg)
+  }
+  
+  75% {
+    background-image: url(../assets/5.jpg)
+  }
+  
+  100% {
+    background-image: url(../assets/6.jpg)
+  }
+  
+}
+
 h3 {
   color: aliceblue;
 }
@@ -87,48 +118,48 @@ h3 {
   text-shadow: 0px 0px 5px black;
 }
 .primeiro {
-  position: relative;
-  top: 20px;
-  left: 50px;
-  color: black;
+  position: absolute;
+  top: 160px;
+  left: 312px;
+  color: rgb(255, 255, 255);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 75px;
 }
 .segundo {
-  position: relative;
-  top: 23px;
-  left: 50px;
-  color: aqua;
+  position: absolute;
+  top: 160px;
+  left: 798px;
+  color: #0c75ee;
+  font-style: italic;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 75px;
 }
 
 .parag {
-  font-size: 110%;
-  position: relative;
-  top: 40px;
-  left: 50px;
-  margin-right: 60%;
+  font-size: 130%;
+  position: absolute;
+  top: 310px;
+  left: 150px;
+  margin-right: 12%;
+  color: white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
 .b-hori {
-  height: 2px;
+  height: 50px;
   border: none;
-  color: #000;
-  background-color: #000;
+  color: rgb(255, 255, 255);
   margin-top: 40px;
   margin-right: 60%;
   margin-bottom: 0px;
-  position: relative;
+  position: absolute;
   left: 52px;
-}
-
-.img-homem {
-  position: relative;
-  top: -295px;
-  left: 800px;
-  width: 36%;
-  border-radius: 5%;
+  top: 50%;
 }
 
 .botao-res {
-  position: relative;
+  position: absolute;
   border: 0;
   background: rgb(10, 25, 231);
   margin: 10px auto;
@@ -141,8 +172,8 @@ h3 {
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
-  top: -50%;
-  left: 425px;
+  top: 480px;
+  left: 880px;
 }
 
 li {
