@@ -1,6 +1,6 @@
 # devweb
 
-> A Vue.js project
+> A Dev Web project by Iesus Batista and Jefferson Nunes
 
 ## Build Setup
 
