@@ -15,3 +15,7 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+
+# Arquivos dotnet core e ef core
+bin
+obj
